@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="724.0" style="-fx-background-color: #78A9F7;" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="group11.dictapp.HomeController">
+    <children>
+        <TextField fx:id="tfInput" layoutX="7.0" layoutY="50.0" prefHeight="43.0" prefWidth="250.0" promptText="Nhập từ bạn cần tra" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="50.0">
+            <font>
+                <Font size="20.0" />
+            </font>
+            <opaqueInsets>
+                <Insets />
+            </opaqueInsets></TextField>
+        <TextArea fx:id="taMeaning" editable="false" layoutX="330.0" layoutY="49.0" prefHeight="329.0" prefWidth="374.0" promptText="Nghĩa" scrollLeft="100.0" scrollTop="100.0" wrapText="true" AnchorPane.bottomAnchor="21.0" AnchorPane.leftAnchor="330.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="50.0">
+            <font>
+                <Font size="20.0" />
+            </font></TextArea>
+        <Label layoutX="448.0" layoutY="377.0" text="Author: Lê Hữu Đức - Nguyễn Sỹ Thành" AnchorPane.bottomAnchor="1.0" AnchorPane.rightAnchor="2.0" />
+        <Button fx:id="btSpeak" layoutX="269.0" layoutY="50.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="47.0" AnchorPane.leftAnchor="269.0" AnchorPane.topAnchor="50.0">
+            <cursor>
+                <Cursor fx:constant="DEFAULT" />
+            </cursor></Button>
+        <ImageView disable="true" fitHeight="47.0" fitWidth="47.0" layoutX="269.0" layoutY="48.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="269.0" AnchorPane.topAnchor="50.0">
+            <image>
+                <Image url="@../../speaker.png" />
+            </image></ImageView>
+      <ImageView fitHeight="47.0" fitWidth="56.0" layoutX="611.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="2.0">
+         <image>
+            <Image url="@../../Logo%20dictionary.png" />
+         </image></ImageView>
+      <ButtonBar buttonMinWidth="60.0" layoutY="14.0" prefHeight="28.0" prefWidth="318.0">
+        <buttons>
+              <Button fx:id="btSearchOnl" mnemonicParsing="false" prefHeight="22.0" prefWidth="190.0" text="Tra online">
+                  <font>
+                      <Font size="10.0" />
+                  </font>
+              </Button>
+              <Button fx:id="btAdd" mnemonicParsing="false" onAction="#changeInsertScene" prefHeight="18.0" prefWidth="154.0" text="Thêm từ">
+                  <font>
+                      <Font size="10.0" />
+                  </font>
+              </Button>
+              <Button fx:id="btModify" mnemonicParsing="false" onAction="#changeModifyScene" prefHeight="13.0" prefWidth="154.0" text="Sửa từ">
+                  <font>
+                      <Font size="10.0" />
+                  </font>
+              </Button>
+              <Button fx:id="btDelete" mnemonicParsing="false" onAction="#changeDeleteScene" prefHeight="22.0" prefWidth="154.0" text="Xoá từ">
+                  <font>
+                      <Font size="10.0" />
+                  </font>
+              </Button>
+        </buttons>
+      </ButtonBar>
+      <TableView fx:id="tableWord" layoutX="20.0" layoutY="93.0" prefHeight="286.0" prefWidth="296.0" AnchorPane.bottomAnchor="21.0" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="93.0">
+        <columns>
+          <TableColumn fx:id="clWordTarget" editable="false" prefWidth="75.0" sortable="false" text="Từ" />
+          <TableColumn fx:id="clWordMeaning" editable="false" prefWidth="218.4000015258789" sortable="false" text="Nghĩa" />
+        </columns>
+      </TableView>
+    </children>
+    <cursor>
+        <Cursor fx:constant="DEFAULT" />
+    </cursor>
+</AnchorPane>
