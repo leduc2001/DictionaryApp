@@ -104,8 +104,7 @@ public class HomeController implements Initializable {
         tableWord.setOnMouseClicked(mouseEvent -> {
             Word selected = tableWord.getSelectionModel().getSelectedItem();
             if(selected != null) {
-                tfInput.setText(selected.getWord_target());
-                taMeaning.setText(selected.getWord_explain());
+                taMeaning.setText(selected.getWord_target() + "\n\n" + selected.getWord_explain());
             }
         });
 
@@ -132,7 +131,7 @@ public class HomeController implements Initializable {
             } else if (dict.dictionaryLookup(input) == null){
                 taMeaning.setText("Không tìm thấy");
             } else {
-                taMeaning.setText(dict.dictionaryLookup(input));
+                taMeaning.setText(input + "\n\n" + dict.dictionaryLookup(input));
             }
         });
 
