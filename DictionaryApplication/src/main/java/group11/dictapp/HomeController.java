@@ -137,7 +137,12 @@ public class HomeController implements Initializable {
 
         btSpeak.setOnMouseClicked(mouseEvent -> {
             textToSpeech speech = new textToSpeech();
-            speech.speakWord(tfInput.getText());
+            Word selected = tableWord.getSelectionModel().getSelectedItem();
+            if(selected != null) {
+                speech.speakWord(selected.getWord_target());
+            } else {
+                speech.speakWord(tfInput.getText());
+            }
         });
     }
 }
