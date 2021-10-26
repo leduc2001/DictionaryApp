@@ -4,7 +4,7 @@ module group11.dictapp {
     requires java.sql;
     requires freetts;
     requires jsapi;
-
+    requires java.speech.api;
 
     opens group11.dictapp to javafx.fxml;
     exports group11.dictapp;

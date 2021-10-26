@@ -17,6 +17,8 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import com.darkprograms.speech.translator.GoogleTranslate;
+
 import static group11.dictapp.DictionaryApplication.dict;
 
 public class HomeController implements Initializable {
@@ -142,6 +144,19 @@ public class HomeController implements Initializable {
                 speech.speakWord(selected.getWord_target());
             } else {
                 speech.speakWord(tfInput.getText());
+            }
+        });
+
+        btSearchOnl.setOnMouseClicked(mouseEvent -> {
+            String text = tfInput.getText();
+            try {
+                String viText = GoogleTranslate.translate("en-US", "vi", text);
+                taMeaning.setText(viText);
+            } catch (IOException e) {
+                Alert alert = new Alert(Alert.AlertType.WARNING);
+                alert.setTitle("Không thể dịch");
+                alert.setHeaderText("Hãy đảm bảo kết nối internet để dịch!");
+                alert.showAndWait();
             }
         });
     }
